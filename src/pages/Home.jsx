@@ -92,7 +92,7 @@ function Home() {
           <div className="lg:col-span-5 relative group">
             <div className="absolute -inset-4 bg-primary-fixed/30 rounded-[2rem] blur-2xl group-hover:bg-primary-fixed/40 transition-colors"></div>
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
-              <img alt="Portrait of Prof. Dr. Azza Baraka" className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" src="/dr.azza.jpg" onError={(e) => { e.target.src = "https://lh3.googleusercontent.com/aida-public/AB6AXuA70UEdzSHw0w9kdXYyTRwNesHOGB_p5ll3FPTrGBy1ssK9JISH5FKvPZlljUSkTdxuSN8ENhgXHYW5qWSdoyAwBi2MKj95J_nHplqRCHa1pzR2GUdq2HvaoAj1RhQasHQLTTn1jWf5uLCurRKF7hfBwHDb1UsWCBdDzt18CJmszA94EgDQ-kMBuW9-dKKWzIZeK0g89KeOcYxRgwuYkSM0oyH3OCf15fx2XAbNnFtdGZx0PEJJ5IDp_2fk9X_ik1UVbcBVWnh9Rk4" }}/>
+              <img alt="Portrait of Prof. Dr. Azza Baraka" className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" src={`${import.meta.env.BASE_URL}dr.azza.jpg`} onError={(e) => { e.target.src = "https://lh3.googleusercontent.com/aida-public/AB6AXuA70UEdzSHw0w9kdXYyTRwNesHOGB_p5ll3FPTrGBy1ssK9JISH5FKvPZlljUSkTdxuSN8ENhgXHYW5qWSdoyAwBi2MKj95J_nHplqRCHa1pzR2GUdq2HvaoAj1RhQasHQLTTn1jWf5uLCurRKF7hfBwHDb1UsWCBdDzt18CJmszA94EgDQ-kMBuW9-dKKWzIZeK0g89KeOcYxRgwuYkSM0oyH3OCf15fx2XAbNnFtdGZx0PEJJ5IDp_2fk9X_ik1UVbcBVWnh9Rk4" }}/>
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
             </div>
             <div className="absolute -bottom-4 left-4 md:-bottom-8 md:-left-8 bg-white/95 backdrop-blur-sm p-4 md:p-6 shadow-2xl rounded-2xl border border-outline-variant/30 max-w-[240px]">
@@ -142,10 +142,10 @@ function Home() {
             {/* Featured Large Award */}
             <div 
               className="grid md:grid-cols-12 gap-8 items-center bg-white rounded-3xl p-8 md:p-12 border border-outline-variant/30 shadow-sm hover:shadow-md transition-all cursor-pointer group/card"
-              onClick={() => setSelectedImage("/awards/award-0.jpg")}
+              onClick={() => setSelectedImage(`${import.meta.env.BASE_URL}awards/award-0.jpg`)}
             >
               <div className="md:col-span-5 award-shine rounded-xl overflow-hidden bg-surface-container-highest p-4 flex items-center justify-center group-hover/card:opacity-90 transition-opacity">
-                <img alt="Africa Digital Health Innovation Award" className="w-full h-auto object-contain max-h-[400px]" src="/awards/award-0.jpg" />
+                <img alt="Africa Digital Health Innovation Award" className="w-full h-auto object-contain max-h-[400px]" src={`${import.meta.env.BASE_URL}awards/award-0.jpg`} />
               </div>
               <div className="md:col-span-7 pl-0 md:pl-8">
                 <span className="text-secondary font-label-lg tracking-widest uppercase text-xs mb-4 block">Key Achievement</span>
@@ -162,10 +162,10 @@ function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div 
                 className="bg-white rounded-2xl p-4 border border-outline-variant/30 flex flex-col group hover:border-secondary transition-colors cursor-pointer hover:shadow-md"
-                onClick={() => setSelectedImage("/awards/award-1.jpg")}
+                onClick={() => setSelectedImage(`${import.meta.env.BASE_URL}awards/award-1.jpg`)}
               >
                 <div className="mb-4 overflow-hidden rounded-xl shadow-sm award-shine bg-surface-container-highest p-2 group-hover:opacity-90 transition-opacity">
-                  <img alt="Rising Digital Transformer Award" className="w-full h-auto object-contain" src="/awards/award-1.jpg" />
+                  <img alt="Rising Digital Transformer Award" className="w-full h-auto object-contain" src={`${import.meta.env.BASE_URL}awards/award-1.jpg`} />
                 </div>
                 <h4 className="font-headline-md text-xl text-primary mb-2">Rising Digital Transformer</h4>
                 <span className="text-xs font-label-lg text-secondary uppercase tracking-wider mt-auto">Africa Health 1st Award</span>
@@ -173,10 +173,10 @@ function Home() {
               
               <div 
                 className="bg-white rounded-2xl p-4 border border-outline-variant/30 flex flex-col group hover:border-secondary transition-colors cursor-pointer hover:shadow-md"
-                onClick={() => setSelectedImage("/awards/award-2.jpg")}
+                onClick={() => setSelectedImage(`${import.meta.env.BASE_URL}awards/award-2.jpg`)}
               >
                 <div className="mb-4 overflow-hidden rounded-xl shadow-sm award-shine bg-surface-container-highest p-2 group-hover:opacity-90 transition-opacity">
-                  <img alt="AI-Enabled Healthcare Transformation" className="w-full h-auto object-contain" src="/awards/award-2.jpg" />
+                  <img alt="AI-Enabled Healthcare Transformation" className="w-full h-auto object-contain" src={`${import.meta.env.BASE_URL}awards/award-2.jpg`} />
                 </div>
                 <h4 className="font-headline-md text-xl text-primary mb-2">Healthcare AI Transformation</h4>
                 <span className="text-xs font-label-lg text-secondary uppercase tracking-wider mt-auto">Africa Health 2nd Award</span>
@@ -184,10 +184,10 @@ function Home() {
 
               <div 
                 className="bg-white rounded-2xl p-4 border border-outline-variant/30 flex flex-col group hover:border-secondary transition-colors cursor-pointer hover:shadow-md"
-                onClick={() => setSelectedImage("/awards/award-3.jpg")}
+                onClick={() => setSelectedImage(`${import.meta.env.BASE_URL}awards/award-3.jpg`)}
               >
                 <div className="mb-4 overflow-hidden rounded-xl shadow-sm award-shine bg-surface-container-highest p-2 group-hover:opacity-90 transition-opacity">
-                  <img alt="Operational AI & Tech Excellence" className="w-full h-auto object-contain" src="/awards/award-3.jpg" />
+                  <img alt="Operational AI & Tech Excellence" className="w-full h-auto object-contain" src={`${import.meta.env.BASE_URL}awards/award-3.jpg`} />
                 </div>
                 <h4 className="font-headline-md text-xl text-primary mb-2">Operational Excellence</h4>
                 <span className="text-xs font-label-lg text-secondary uppercase tracking-wider mt-auto">Africa Health 3rd Award</span>
@@ -195,10 +195,10 @@ function Home() {
               
               <div 
                 className="bg-white rounded-2xl p-4 border border-outline-variant/30 flex flex-col group hover:border-secondary transition-colors cursor-pointer hover:shadow-md"
-                onClick={() => setSelectedImage("/awards/award-4.jpg")}
+                onClick={() => setSelectedImage(`${import.meta.env.BASE_URL}awards/award-4.jpg`)}
               >
                 <div className="mb-4 overflow-hidden rounded-xl shadow-sm award-shine bg-surface-container-highest p-2 group-hover:opacity-90 transition-opacity">
-                  <img alt="Social Health Impact Award" className="w-full h-auto object-contain" src="/awards/award-4.jpg" />
+                  <img alt="Social Health Impact Award" className="w-full h-auto object-contain" src={`${import.meta.env.BASE_URL}awards/award-4.jpg`} />
                 </div>
                 <h4 className="font-headline-md text-xl text-primary mb-2">Social Health Impact</h4>
                 <span className="text-xs font-label-lg text-secondary uppercase tracking-wider mt-auto">Africa Health 4th Award</span>
