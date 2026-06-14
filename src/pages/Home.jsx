@@ -41,6 +41,7 @@ function Home() {
             <a className="text-secondary border-b-2 border-secondary pb-1 font-label-lg transition-all" href="#about">Home</a>
             <a className="text-on-surface-variant hover:text-primary font-label-lg transition-colors" href="#research">Research</a>
             <a className="text-on-surface-variant hover:text-primary font-label-lg transition-colors" href="#pillars">Pillars</a>
+            <a className="text-on-surface-variant hover:text-primary font-label-lg transition-colors" href="#career">Career</a>
             <a className="text-on-surface-variant hover:text-primary font-label-lg transition-colors" href="#contact">Contact</a>
             <Link to="/blogs" className="text-on-surface-variant hover:text-primary font-label-lg transition-colors">Blogs</Link>
           </div>
@@ -67,6 +68,7 @@ function Home() {
             <a onClick={() => setIsMobileMenuOpen(false)} className="text-secondary font-label-lg py-2" href="#about">Home</a>
             <a onClick={() => setIsMobileMenuOpen(false)} className="text-on-surface-variant hover:text-primary font-label-lg py-2" href="#research">Research</a>
             <a onClick={() => setIsMobileMenuOpen(false)} className="text-on-surface-variant hover:text-primary font-label-lg py-2" href="#pillars">Pillars</a>
+            <a onClick={() => setIsMobileMenuOpen(false)} className="text-on-surface-variant hover:text-primary font-label-lg py-2" href="#career">Career</a>
             <a onClick={() => setIsMobileMenuOpen(false)} className="text-on-surface-variant hover:text-primary font-label-lg py-2" href="#contact">Contact</a>
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/blogs" className="text-on-surface-variant hover:text-primary font-label-lg py-2">Blogs</Link>
           </div>
@@ -114,6 +116,30 @@ function Home() {
             <path d="M0 350Q50 350 150 250T250 150T350 50T400 50" fill="none" stroke="currentColor" strokeWidth="1"></path>
             <path d="M0 450Q50 350 150 350T250 250T350 150T400 150" fill="none" stroke="currentColor" strokeWidth="1"></path>
           </svg>
+        </div>
+      </section>
+
+      {/* Stats Bar */}
+      <section className="bg-primary py-10 md:py-14">
+        <div className="max-w-container-max-width mx-auto px-grid-margin">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center text-on-primary">
+            <div className="flex flex-col items-center gap-2">
+              <span className="font-headline-xl text-4xl md:text-5xl font-bold text-primary-fixed">50+</span>
+              <span className="text-sm font-label-lg text-primary-fixed/70 uppercase tracking-widest">Publications</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <span className="font-headline-xl text-4xl md:text-5xl font-bold text-primary-fixed">1,414</span>
+              <span className="text-sm font-label-lg text-primary-fixed/70 uppercase tracking-widest">Total Citations</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <span className="font-headline-xl text-4xl md:text-5xl font-bold text-primary-fixed">12</span>
+              <span className="text-sm font-label-lg text-primary-fixed/70 uppercase tracking-widest">Theses Supervised</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <span className="font-headline-xl text-4xl md:text-5xl font-bold text-primary-fixed">30+</span>
+              <span className="text-sm font-label-lg text-primary-fixed/70 uppercase tracking-widest">Years of Service</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -311,16 +337,145 @@ function Home() {
         </div>
       </section>
 
+      {/* Academic Timeline Section */}
+      <section id="career" className="py-section-gap bg-surface-container-lowest">
+        <div className="max-w-container-max-width mx-auto px-grid-margin">
+          <div className="text-center mb-14 max-w-2xl mx-auto">
+            <h2 className="font-headline-lg text-3xl md:text-4xl text-primary mb-4">Academic Journey</h2>
+            <p className="text-on-surface-variant text-base md:text-lg">A distinguished career spanning three decades at the Faculty of Medicine, University of Alexandria.</p>
+          </div>
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-px bg-outline-variant/40 -translate-x-1/2"></div>
+            <div className="flex flex-col gap-10">
+              {[
+                { year: "2020 – Present", title: "Head of Quality Assurance Unit", sub: "Faculty of Medicine, Alexandria University", icon: "verified", right: false },
+                { year: "2020 – Present", title: "Coordinator, House Officers Training Board", sub: "Faculty of Medicine, Alexandria University", icon: "groups", right: true },
+                { year: "2011 – Present", title: "Professor of Clinical Pharmacology", sub: "Faculty of Medicine, University of Alexandria", icon: "school", right: false },
+                { year: "2012 – 2020", title: "Deputy Head, Quality Assurance Unit", sub: "Faculty of Medicine, Alexandria University", icon: "manage_accounts", right: true },
+                { year: "2006 – 2011", title: "Assistant Professor of Clinical Pharmacology", sub: "Faculty of Medicine, University of Alexandria", icon: "science", right: false },
+                { year: "2001 – 2006", title: "Lecturer of Clinical Pharmacology", sub: "Faculty of Medicine, University of Alexandria", icon: "menu_book", right: true },
+                { year: "1996 – 2001", title: "Assistant Lecturer of Clinical Pharmacology", sub: "Faculty of Medicine, University of Alexandria", icon: "lab_research", right: false },
+                { year: "1991 – 1996", title: "Demonstrator of Clinical Pharmacology", sub: "Faculty of Medicine, University of Alexandria", icon: "biotech", right: true },
+              ].map((item, i) => (
+                <div key={i} className={`relative flex items-start gap-6 md:gap-0 ${item.right ? 'md:flex-row-reverse' : ''}`}>
+                  {/* Dot */}
+                  <div className="absolute left-5 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-white shadow-sm z-10 mt-1"></div>
+                  {/* Card */}
+                  <div className={`ml-12 md:ml-0 md:w-[45%] ${item.right ? 'md:mr-auto md:pr-16' : 'md:ml-auto md:pl-16'}`}>
+                    <div className="bg-white rounded-2xl p-5 md:p-6 border border-outline-variant/20 shadow-sm hover:shadow-md transition-shadow">
+                      <span className="text-xs font-label-lg text-secondary uppercase tracking-widest mb-2 block">{item.year}</span>
+                      <div className="flex items-start gap-3">
+                        <div className="shrink-0 w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center">
+                          <span className="material-symbols-outlined text-primary text-xl">{item.icon}</span>
+                        </div>
+                        <div>
+                          <h4 className="font-headline-md text-base md:text-lg text-primary leading-snug">{item.title}</h4>
+                          <p className="text-sm text-on-surface-variant mt-1">{item.sub}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Publications & Academic Roles */}
+      <section className="py-section-gap bg-surface-bright">
+        <div className="max-w-container-max-width mx-auto px-grid-margin">
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            {/* Publications */}
+            <div className="lg:col-span-7">
+              <h2 className="font-headline-lg text-3xl md:text-4xl text-primary mb-4">Publications & Research</h2>
+              <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">50 articles published in international peer-reviewed journals with a total of <strong className="text-primary">1,414 citations</strong>.</p>
+              <div className="flex flex-wrap gap-4 mb-10">
+                <a href="https://scholar.google.com.eg/citations?user=EzktP3AAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-on-primary font-label-lg rounded-xl hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                  <span className="material-symbols-outlined text-lg">school</span> Google Scholar
+                </a>
+                <a href="https://orcid.org/0000-0002-3437-6669" target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-outline-variant text-primary font-label-lg rounded-xl hover:bg-surface-container hover:-translate-y-0.5 transition-all">
+                  <span className="material-symbols-outlined text-lg">badge</span> ORCID Profile
+                </a>
+              </div>
+              <div>
+                <h3 className="font-headline-md text-xl text-primary mb-5">Research Supervision</h3>
+                <div className="grid grid-cols-3 gap-4">
+                  {[
+                    { count: "6", label: "Master Theses" },
+                    { count: "5", label: "MD Theses" },
+                    { count: "1", label: "PhD Thesis" },
+                  ].map((s, i) => (
+                    <div key={i} className="bg-white rounded-2xl p-5 border border-outline-variant/20 text-center shadow-sm">
+                      <span className="block font-headline-xl text-3xl font-bold text-secondary mb-1">{s.count}</span>
+                      <span className="text-sm text-on-surface-variant font-label-lg">{s.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            {/* Journal Reviewer & Memberships */}
+            <div className="lg:col-span-5">
+              <h3 className="font-headline-md text-xl text-primary mb-5">Journal Reviewer</h3>
+              <ul className="space-y-3 mb-10">
+                {[
+                  "Biochemical Pharmacology",
+                  "European Journal of Pharmacology",
+                  "American Journal of Medical Sciences",
+                  "Archives of Medical Research",
+                  "Complementary Medicine & Drug Discovery",
+                  "Neurological Research",
+                  "CNS Neuroscience & Therapeutics",
+                  "PNAS – Biological Sciences",
+                ].map((j, i) => (
+                  <li key={i} className="flex items-center gap-3 text-on-surface-variant text-sm">
+                    <span className="w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+                    {j}
+                  </li>
+                ))}
+              </ul>
+              <h3 className="font-headline-md text-xl text-primary mb-5">Professional Memberships</h3>
+              <ul className="space-y-3">
+                {[
+                  "Egyptian Pharmacological Society",
+                  "General Egyptian Syndicate of Doctors",
+                  "Scientific Society, Faculty of Pharmacy, Alexandria University",
+                  "Scientific Society, Students Hospital, Alexandria University",
+                ].map((m, i) => (
+                  <li key={i} className="flex items-center gap-3 text-on-surface-variant text-sm">
+                    <span className="w-2 h-2 rounded-full bg-outline-variant shrink-0"></span>
+                    {m}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer id="contact" className="bg-primary text-on-primary">
         <div className="max-w-container-max-width mx-auto px-grid-margin py-16 md:py-24">
           <div className="grid md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-5">
-              <div className="font-headline-md text-3xl mb-8">Prof. Dr. Azza Baraka</div>
-              <p className="text-primary-fixed/70 text-lg leading-relaxed mb-10 max-w-sm">
-                A legacy of academic authority, dedicated to elevating global healthcare through clinical safety and digital excellence.
-              </p>
+              <div className="font-headline-md text-3xl mb-4">Prof. Dr. Azza Baraka</div>
+              <p className="text-primary-fixed/70 text-sm leading-relaxed mb-2">Department of Clinical Pharmacology</p>
+              <p className="text-primary-fixed/70 text-sm leading-relaxed mb-2">Faculty of Medicine, University of Alexandria</p>
+              <p className="text-primary-fixed/70 text-sm leading-relaxed mb-6">Alexandria 21521, Egypt</p>
+              <div className="flex flex-col gap-3 mb-8">
+                <a href="mailto:azzabarakamnh@gmail.com" className="flex items-center gap-2 text-primary-fixed/80 hover:text-white transition-colors text-sm">
+                  <span className="material-symbols-outlined text-base">mail</span> azzabarakamnh@gmail.com
+                </a>
+                <a href="mailto:azza.baraka@alexmed.edu.eg" className="flex items-center gap-2 text-primary-fixed/80 hover:text-white transition-colors text-sm">
+                  <span className="material-symbols-outlined text-base">mail</span> azza.baraka@alexmed.edu.eg
+                </a>
+                <a href="https://orcid.org/0000-0002-3437-6669" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-fixed/80 hover:text-white transition-colors text-sm">
+                  <span className="material-symbols-outlined text-base">badge</span> ORCID: 0000-0002-3437-6669
+                </a>
+              </div>
               <div className="flex flex-wrap gap-4">
                 <a aria-label="Facebook" className="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all text-white hover:text-primary-fixed" href="https://www.facebook.com/azza.baraka.5" target="_blank" rel="noopener noreferrer">
                   <svg fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" /></svg>
@@ -338,20 +493,20 @@ function Home() {
             </div>
             <div className="md:col-span-7 grid grid-cols-2 gap-8">
               <div>
-                <h5 className="font-label-lg text-white mb-8 tracking-widest uppercase text-xs">Resources</h5>
+                <h5 className="font-label-lg text-white mb-8 tracking-widest uppercase text-xs">Quick Links</h5>
                 <ul className="space-y-5 text-primary-fixed/80">
-                  <li><a className="hover:text-white transition-colors" href="#">Academic Affiliations</a></li>
-                  <li><a className="hover:text-white transition-colors" href="#">Research Publications</a></li>
-                  <li><a className="hover:text-white transition-colors" href="#">Clinical Protocols</a></li>
+                  <li><a className="hover:text-white transition-colors" href="#about">About</a></li>
+                  <li><a className="hover:text-white transition-colors" href="#research">Research</a></li>
+                  <li><a className="hover:text-white transition-colors" href="#awards">Awards</a></li>
+                  <li><a className="hover:text-white transition-colors" href="#career">Career</a></li>
                 </ul>
               </div>
               <div>
-                <h5 className="font-label-lg text-white mb-8 tracking-widest uppercase text-xs">Expertise</h5>
+                <h5 className="font-label-lg text-white mb-8 tracking-widest uppercase text-xs">Academic</h5>
                 <ul className="space-y-5 text-primary-fixed/80">
-                  <li><a className="hover:text-white transition-colors" href="#">Clinical Pharmacology</a></li>
-                  <li><a className="hover:text-white transition-colors" href="#">Digital Health AI</a></li>
-                  <li><a className="hover:text-white transition-colors" href="#">Medication Adherence</a></li>
-                  <li><a className="hover:text-white transition-colors" href="#">Pedagogical Innovation</a></li>
+                  <li><a className="hover:text-white transition-colors" href="https://scholar.google.com.eg/citations?user=EzktP3AAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+                  <li><a className="hover:text-white transition-colors" href="https://orcid.org/0000-0002-3437-6669" target="_blank" rel="noopener noreferrer">ORCID</a></li>
+                  <li><a className="hover:text-white transition-colors" href="https://linktr.ee/Prof.AzzaBaraka" target="_blank" rel="noopener noreferrer">Linktree</a></li>
                 </ul>
               </div>
             </div>
