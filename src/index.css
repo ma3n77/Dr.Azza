@@ -5,9 +5,15 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   body {
-    @apply bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed;
+    @apply bg-surface text-text-primary font-body;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  ::selection {
+    @apply bg-primary text-white;
   }
 }
 
@@ -15,29 +21,4 @@
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   display: inline-block;
   vertical-align: middle;
-}
-
-.pillar-card-hover:hover {
-  transform: translateY(-8px);
-}
-
-.award-shine {
-  position: relative;
-  overflow: hidden;
-}
-
-.award-shine::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-  transform: rotate(45deg);
-  transition: 0.5s;
-}
-
-.award-shine:hover::after {
-  left: 120%;
 }

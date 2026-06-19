@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: ma3n77/Dr.Azza
+  branch: main
+  app_id: Ov23liNsxArs90X9CD4q # Your GitHub OAuth App Client ID
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+logo_url: "/Dr.Azza/dr.azza_landscape.jpg"
+
+collections:
+  - name: "blogs"
+    label: "Blogs"
+    folder: "src/content/blogs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Thumbnail Image", name: "thumbnail", widget: "image", required: false}
+      - {label: "Summary", name: "summary", widget: "text", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
