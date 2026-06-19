@@ -9,17 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"/>
     <style>
       :root {
-        /* Override Sveltia CMS default theme colors to match Dr. Azza's brand */
-        --sui-primary-accent-color: #001736;
-        --sui-primary-accent-color-hover: #1a5cc8;
-        --sui-secondary-accent-color: #1a5cc8;
-        --sui-font-family-sans: "Outfit", sans-serif;
-        --sui-font-family-serif: "Hanken Grotesk", sans-serif;
-        --sui-border-radius: 0.5rem;
+        color-scheme: light; /* Force light mode */
+        --sui-primary-accent-color: #001736 !important;
+        --sui-primary-accent-color-hover: #1a5cc8 !important;
+        --sui-font-family-sans: "Outfit", sans-serif !important;
+        --sui-font-family-serif: "Hanken Grotesk", sans-serif !important;
       }
-      /* Add a subtle background color to the login screen */
-      body {
-        background-color: #f7f9fb;
+      
+      /* Aggressive overrides for the Sveltia mounting point */
+      body, html {
+        background-color: #f7f9fb !important;
+      }
+      
+      /* Hide the 'Sveltia CMS' text if possible, to focus on the logo */
+      h1 {
+        display: none !important;
       }
     </style>
   </head>
