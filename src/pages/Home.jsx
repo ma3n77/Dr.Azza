@@ -48,6 +48,9 @@ function Home() {
             <Link to="/blogs" className="text-body-sm text-text-secondary hover:text-primary transition-colors">
               Insights
             </Link>
+            <Link to="/qa" className="text-body-sm text-text-secondary hover:text-primary transition-colors">
+              Q&amp;A
+            </Link>
           </div>
 
           <button
@@ -78,6 +81,9 @@ function Home() {
             ))}
             <Link onClick={() => setIsMobileMenuOpen(false)} to="/blogs" className="text-body-md text-text-secondary hover:text-primary py-2 transition-colors">
               Insights
+            </Link>
+            <Link onClick={() => setIsMobileMenuOpen(false)} to="/qa" className="text-body-md text-text-secondary hover:text-primary py-2 transition-colors">
+              Q&amp;A
             </Link>
           </div>
         </div>
